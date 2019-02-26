@@ -1,0 +1,26 @@
+<!-- HTML and CSS taken from https://1stwebdesigner.com/calendar-ui-layout-css/ -->
+  
+<section class="mounth">
+    <header>
+        <span class="navprev" (click)=movePrev()> <img src="assets/images/left-arrow.svg" height="18px" width="18px"/> </span>
+        <h1>{{currentMonth}} {{currentYear}}</h1>
+        <span class="navnext" (click)=moveNext()> <img src="assets/images/right-arrow.svg" height="18px" width="18px"/>  </span>
+    </header>
+  
+    <article>
+      <div class="days">
+        <b>S</b>
+        <b>M</b>
+        <b>T</b>
+        <b>W</b>
+        <b>T</b>
+        <b>F</b>
+        <b>S</b>
+      </div>
+      <div class="dates" *ngFor="let d of activeDays"> 
+          <span (click)="showDate(d)" class="{{d.isActive}}"> {{d.date}}</span>
+      </div>
+    </article>
+  </section>
+
+  <div> <p class="displayDate"> {{selectedDate}}</p></div>
